@@ -1,0 +1,35 @@
+# Gradle files
+.gradle/
+build/
+
+# Gradle Wrapper
+gradle/wrapper/
+gradlew
+gradlew.bat
+
+# Android Studio
+/.idea/
+*.iml
+
+# Local configuration
+/local.properties
+
+# Android build outputs
+*/build/
+
+# ProGuard mapping files
+mapping.txt
+
+# Keystore files
+*.jks
+*.keystore
+
+# Crashlytics
+crashlytics.properties
+
+# OS-specific files
+*.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.log
