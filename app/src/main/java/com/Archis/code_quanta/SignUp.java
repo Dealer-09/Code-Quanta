@@ -37,6 +37,7 @@ public class SignUp extends AppCompatActivity {
         password= findViewById(R.id.password);
         register= findViewById(R.id.register);
         progressBar= findViewById(R.id.progressBar);
+        signIn= findViewById(R.id.signIn);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
