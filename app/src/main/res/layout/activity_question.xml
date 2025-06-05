@@ -3,122 +3,358 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#5490C0"
+    android:background="@drawable/gradient_background"
     android:id="@+id/main"
-    android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
     tools:context=".QuestionActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/dispNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            android:text="1/5"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textAlignment="textEnd"
-            android:gravity="center_horizontal"/>
 
-        <TextView
-            android:id="@+id/quitBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="QUIT"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_weight="0.8"
-            android:textAlignment="textEnd"/>
-
-    </LinearLayout>
-
+    <!-- Status Bar Spacer -->
     <View
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#B7B4B4"/>
+        android:layout_height="24dp" />
 
-    <TextView
-        android:id="@+id/questions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="This is a sample question we will show that in quiz"
-        android:textColor="#fff"
-        android:textSize="25sp" />
-    <RadioGroup
-        android:id="@+id/answerGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
-        <RadioButton
-            android:id="@+id/rabioBtn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option A"
-            android:checked="false"
-            android:textSize="22sp"/>
-        <RadioButton
-            android:id="@+id/rabioBtn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option B"
-            android:checked="false"
-            android:textSize="22sp"/>
-        <RadioButton
-            android:id="@+id/rabioBtn3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option C"
-            android:checked="false"
-            android:textSize="22sp"/>
-        <RadioButton
-            android:id="@+id/rabioBtn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option D"
-            android:checked="false"
-            android:textSize="22sp"/>
-    </RadioGroup>
-    <Button
-        android:id="@+id/nextBtn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#1931B9"
-        android:layout_marginTop="30dp"/>
+    <!-- Header Section with Progress and Quit -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="150dp"
-        app:cardCornerRadius="8dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp"
+        android:backgroundTint="#1A1A2E">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:layout_marginStart="15dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
+
+            <!-- Progress Indicator -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/dispNo"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:text="1/5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:background="@drawable/circular_progress_bg"
+                    android:elevation="4dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Progress"
+                        android:textColor="#A0A3BD"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:progress="20"
+                        android:max="100"
+                        android:progressTint="#4ECDC4"
+                        android:progressBackgroundTint="#2D2D44" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Quit Button -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total Score :-"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"/>
-            <TextView
-                android:id="@+id/score"
-                android:layout_marginStart="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00"
-                android:textStyle="bold"
-                android:textSize="28sp"
-                android:layout_gravity="center_vertical"/>
+                app:cardCornerRadius="15dp"
+                app:cardElevation="6dp"
+                android:backgroundTint="#FF4757">
+
+                <TextView
+                    android:id="@+id/quitBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QUIT"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp"
+                    android:minWidth="60dp"
+                    android:gravity="center" />
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
+
+    <!-- Question Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="16dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#16213E">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Question Icon -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_dialog_info"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:tint="#4ECDC4"
+                android:alpha="0.8" />
+
+            <!-- Question Text -->
+            <TextView
+                android:id="@+id/questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="This is a sample question we will show that in quiz"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:lineSpacingExtra="2dp"
+                android:gravity="start" />
+
+            <!-- Decorative Element -->
+            <View
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="16dp"
+                android:background="#4ECDC4"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Answer Options -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#1A1A2E">
+
+        <RadioGroup
+            android:id="@+id/answerGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#2D2D44">
+
+                <RadioButton
+                    android:id="@+id/rabioBtn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option A"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:buttonTint="#4ECDC4"
+                    android:background="?android:attr/selectableItemBackground" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#2D2D44">
+
+                <RadioButton
+                    android:id="@+id/rabioBtn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option B"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:buttonTint="#4ECDC4"
+                    android:background="?android:attr/selectableItemBackground" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#2D2D44">
+
+                <RadioButton
+                    android:id="@+id/rabioBtn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option C"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:buttonTint="#4ECDC4"
+                    android:background="?android:attr/selectableItemBackground" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#2D2D44">
+
+                <RadioButton
+                    android:id="@+id/rabioBtn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option D"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:buttonTint="#4ECDC4"
+                    android:background="?android:attr/selectableItemBackground" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RadioGroup>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Next Button -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp"
+        android:backgroundTint="#4ECDC4">
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@android:color/transparent"
+            android:padding="16dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Score Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="auto"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp"
+        android:backgroundTint="#1A1A2E">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
+
+            <!-- Score Icon -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:tint="#FFD93D"
+                android:layout_marginEnd="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Score"
+                    android:textColor="#A0A3BD"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Points: "
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:textColor="#FFD93D" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Trophy Icon -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@android:drawable/star_big_on"
+                android:tint="#FFD93D"
+                android:alpha="0.8" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </LinearLayout>
