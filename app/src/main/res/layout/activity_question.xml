@@ -284,7 +284,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="auto"
+        android:layout_marginTop="24dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="12dp"
         android:backgroundTint="#1A1A2E">
