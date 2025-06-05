@@ -100,7 +100,7 @@
                                 android:id="@+id/JavaImage"
                                 android:layout_width="120dp"
                                 android:layout_height="120dp"
-                                android:src="@drawable/JAVA"/>
+                                android:src="@drawable/java"/>
                             <TextView
                                 android:id="@+id/JavaText"
                                 android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
                                 android:layout_marginTop="20dp"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/Kotlin"/>
+                                android:src="@drawable/kotlin"/>
                             <TextView
                                 android:id="@+id/KotlinText"
                                 android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
                                 android:layout_marginTop="20dp"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/Python"/>
+                                android:src="@drawable/python"/>
                             <TextView
                                 android:id="@+id/pythonText"
                                 android:layout_width="wrap_content"
@@ -250,7 +250,7 @@
                                 android:layout_marginTop="15dp"
                                 android:layout_width="110dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/C"/>
+                                android:src="@drawable/c"/>
                             <TextView
                                 android:id="@+id/cText"
                                 android:layout_width="wrap_content"
@@ -326,7 +326,7 @@
                                 android:layout_marginBottom="-10dp"
                                 android:layout_width="140dp"
                                 android:layout_height="140dp"
-                                android:src="@drawable/Dart"/>
+                                android:src="@drawable/dart"/>
                             <TextView
                                 android:id="@+id/dartText"
                                 android:layout_width="wrap_content"
@@ -357,7 +357,7 @@
                                 android:layout_width="120dp"
                                 android:layout_height="120dp"
                                 android:layout_marginBottom="-7dp"
-                                android:src="@drawable/Rust"/>
+                                android:src="@drawable/rust"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
