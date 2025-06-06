@@ -207,8 +207,8 @@ Thumbs.db
 # Signing files
 release/
 
-# Screenshots (keep folder structure, ignore actual images)
-screenshots/*.png
-screenshots/*.jpg
-screenshots/*.jpeg
+# Screenshots (allow project screenshots to be tracked)
+!screenshots/*.png
+!screenshots/*.jpg
+!screenshots/*.jpeg
 !screenshots/README.md
