@@ -46,6 +46,7 @@
 <div align="center">
   <img src="screenshots/splash.png" width="200" alt="Splash Screen" style="margin: 10px;">
   <img src="screenshots/login.png" width="200" alt="Login Screen" style="margin: 10px;">
+  <img src="screenshots/home.png" width="200" alt="Splash Screen" style="margin: 10px;">
   <img src="screenshots/quiz.png" width="200" alt="Quiz Interface" style="margin: 10px;">
   <img src="screenshots/results.png" width="200" alt="Results Screen" style="margin: 10px;">
 </div>
