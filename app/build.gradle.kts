@@ -33,10 +33,10 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
+    implementation ("com.mikhaellopez:circularprogressbar:3.1.0")
     implementation(libs.constraintlayout)
     implementation(libs.firebase.auth)
     implementation(libs.credentials)
